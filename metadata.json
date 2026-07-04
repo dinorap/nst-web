@@ -1,0 +1,6 @@
+{
+  "name": "Dolphin Anty Clone",
+  "description": "A high-fidelity clone of the Dolphin Anty antidetect browser website, featuring landing page sections, use cases, and detailed pricing plans.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
