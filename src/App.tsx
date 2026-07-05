@@ -1,6 +1,7 @@
 import React, { useState, useEffect, ReactNode, useRef } from 'react'
 import { translations } from './translations'
 import { motion, AnimatePresence } from 'motion/react'
+import LogoImg from './assets/logo/logo.png'
 
 const DOWNLOAD_URL = 'https://github.com/dinorap/FastX_Release/releases/download/v0.1.11/FastX.Launcher_0.1.10_x64_en-US.msi';
 
@@ -368,8 +369,7 @@ function Header({ tab, setTab, scrolled, lang, setLang }: { tab: string, setTab:
         <header className={`header ${scrolled ? 'scrolled' : ''}`}>
             <div className="container header-inner">
                 <a href="#" className="logo" onClick={(e) => { e.preventDefault(); setTab('features'); }}>
-                    <span className="logo-mark">🐬</span>
-                    <span className="logo-text">FastST</span>
+                    <img src={LogoImg} alt="FastST" className="logo-img" />
                 </a>
                 <nav className="nav">
                     <div className="nav-tabs">
