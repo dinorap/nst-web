@@ -5,6 +5,23 @@ import LogoImg from './assets/logo/logo.png'
 
 const DOWNLOAD_URL = 'https://github.com/dinorap/FastX_Release/releases/download/v0.1.11/FastX.Launcher_0.1.10_x64_en-US.msi';
 
+const scrollToSection = (tab: string) => {
+    const sectionMap: { [key: string]: string } = {
+        'features': 'features',
+        'use-cases': 'use-cases',
+        'pricing': 'pricing',
+        'faq': 'faq',
+        'docs': 'docs',
+    }
+    const sectionId = sectionMap[tab]
+    if (sectionId) {
+        const element = document.getElementById(sectionId)
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+    }
+}
+
 const PLANS = [
     {
         id: 'free',
@@ -375,31 +392,31 @@ function Header({ tab, setTab, scrolled, lang, setLang }: { tab: string, setTab:
                     <div className="nav-tabs">
                         <button
                             className={`nav-tab ${tab === 'features' ? 'active' : ''}`}
-                            onClick={() => setTab('features')}
+                            onClick={() => { setTab('features'); scrollToSection('features'); }}
                         >
                             {t.nav.features}
                         </button>
                         <button
                             className={`nav-tab ${tab === 'use-cases' ? 'active' : ''}`}
-                            onClick={() => setTab('use-cases')}
+                            onClick={() => { setTab('use-cases'); scrollToSection('use-cases'); }}
                         >
                             {t.nav.useCases}
                         </button>
                         <button
                             className={`nav-tab ${tab === 'pricing' ? 'active' : ''}`}
-                            onClick={() => setTab('pricing')}
+                            onClick={() => { setTab('pricing'); scrollToSection('pricing'); }}
                         >
                             {t.nav.pricing}
                         </button>
                         <button
                             className={`nav-tab ${tab === 'faq' ? 'active' : ''}`}
-                            onClick={() => setTab('faq')}
+                            onClick={() => { setTab('faq'); scrollToSection('faq'); }}
                         >
                             {t.nav.faq}
                         </button>
                         <button
                             className={`nav-tab ${tab === 'docs' ? 'active' : ''}`}
-                            onClick={() => setTab('docs')}
+                            onClick={() => { setTab('docs'); scrollToSection('docs'); }}
                         >
                             {t.nav.docs}
                         </button>
@@ -446,7 +463,7 @@ function Header({ tab, setTab, scrolled, lang, setLang }: { tab: string, setTab:
 function HeroSection({ title, subtitle, eyebrow, lang }: { title: ReactNode, subtitle: string, eyebrow: string, lang: 'vi' | 'en' }) {
     const t = translations[lang]
     return (
-        <section className="hero" style={{ textAlign: 'center' }}>
+        <section className="hero" id="features" style={{ textAlign: 'center' }}>
             <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <motion.span 
                     className="eyebrow"
@@ -849,7 +866,7 @@ function DocumentationView({ lang }: { lang: 'vi' | 'en' }) {
                 subtitle={t.hero.docs.subtitle}
             />
 
-            <section className="docs" style={{ paddingBottom: '100px' }}>
+            <section className="docs" id="docs" style={{ paddingBottom: '100px' }}>
                 <div className="container">
                     <div className="use-case-grid">
                         {docs.map((doc, i) => (
@@ -965,17 +982,17 @@ export default function App() {
                             <div className="footer-col">
                                 <h4>{t.footer.product}</h4>
                                 <ul>
-                                    <li><button className="footer-link-btn" onClick={() => setTab('features')}>{t.nav.features}</button></li>
-                                    <li><button className="footer-link-btn" onClick={() => setTab('pricing')}>{t.nav.pricing}</button></li>
-                                    <li><a href={DOWNLOAD_URL}>{t.hero.cta.download}</a></li>
+                                    <li><button className="footer-link-btn" onClick={() => { setTab('features'); scrollToSection('features'); }}>{t.nav.features}</button></li>
+                                    <li><button className="footer-link-btn" onClick={() => { setTab('pricing'); scrollToSection('pricing'); }}>{t.nav.pricing}</button></li>
+                                    <li><button className="footer-link-btn" onClick={() => { setTab('features'); scrollToSection('features'); }}>{t.hero.cta.download}</button></li>
                                     <li><a href="#">{t.nav.docs}</a></li>
                                 </ul>
                             </div>
                             <div className="footer-col">
                                 <h4>{t.footer.resources}</h4>
                                 <ul>
-                                    <li><button className="footer-link-btn" onClick={() => setTab('docs')}>{t.nav.docs}</button></li>
-                                    <li><button className="footer-link-btn" onClick={() => setTab('faq')}>{t.nav.faq}</button></li>
+                                    <li><button className="footer-link-btn" onClick={() => { setTab('docs'); scrollToSection('docs'); }}>{t.nav.docs}</button></li>
+                                    <li><button className="footer-link-btn" onClick={() => { setTab('faq'); scrollToSection('faq'); }}>{t.nav.faq}</button></li>
                                     <li><a href="#">Blog</a></li>
                                     <li><a href="#">{lang === 'vi' ? 'Hỗ trợ' : 'Support'}</a></li>
                                 </ul>
