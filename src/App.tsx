@@ -9,8 +9,6 @@ const PLANS = [
         id: 'free',
         name: 'Free',
         desc: 'Dành cho người dùng mới',
-        icon: '🌊',
-        iconClass: 'neutral',
         monthly: 0,
         yearly: 0,
         cta: 'Bắt đầu miễn phí',
@@ -26,10 +24,8 @@ const PLANS = [
         id: 'starter',
         name: 'Starter',
         desc: 'Dành cho người dùng cá nhân',
-        icon: '🚀',
-        iconClass: 'accent',
         monthly: 250000,
-        yearly: 2475000,
+        yearly: 2610000,
         cta: 'Chọn Starter',
         ctaStyle: 'outline',
         features: [
@@ -44,10 +40,8 @@ const PLANS = [
         id: 'base',
         name: 'Base',
         desc: 'Dành cho cá nhân & nhóm nhỏ',
-        icon: '⚡',
-        iconClass: '',
         monthly: 2225000,
-        yearly: 22250000,
+        yearly: 23229000,
         cta: 'Chọn Base',
         ctaStyle: 'primary',
         featured: true,
@@ -65,10 +59,8 @@ const PLANS = [
         id: 'team',
         name: 'Team',
         desc: 'Dành cho những nhóm lớn',
-        icon: '👥',
-        iconClass: 'warm',
         monthly: 3975000,
-        yearly: 39750000,
+        yearly: 41499000,
         cta: 'Chọn Team',
         ctaStyle: 'outline',
         features: [
@@ -86,10 +78,8 @@ const PLANS = [
         id: 'enterprise',
         name: 'Enterprise',
         desc: 'Dành cho doanh nghiệp & công ty lớn',
-        icon: '🏢',
-        iconClass: 'purple',
         monthly: 7475000,
-        yearly: 74750000,
+        yearly: 78039000,
         cta: 'Liên hệ bán hàng',
         ctaStyle: 'outline',
         features: [
@@ -173,25 +163,21 @@ const FAQS = [
 
 const USE_CASES = [
     {
-        icon: '🛒',
         title: 'Thương mại điện tử',
         desc: 'Quản lý hàng chục tài khoản Amazon, eBay, Shopee mà không lo bị liên kết hay khóa tài khoản.',
         gridSpan: 4
     },
     {
-        icon: '📈',
         title: 'Tiếp thị liên kết',
         desc: 'Tạo hàng loạt profile sạch để chạy quảng cáo Facebook, Google Ads, TikTok Ads hiệu quả cao. Nuôi tài khoản, cài đặt và khởi chạy dễ dàng với trình duyệt hàng đầu.',
         gridSpan: 8
     },
     {
-        icon: '🧪',
         title: 'Thử nghiệm & QA',
         desc: 'Kiểm tra giao diện web trên nhiều cấu hình dấu vân tay khác nhau một cách nhanh chóng và chính xác nhất.',
         gridSpan: 7
     },
     {
-        icon: '🤝',
         title: 'Quản lý đội ngũ',
         desc: 'Phân quyền linh hoạt cho thành viên, chia sẻ profile an toàn và đồng bộ hóa tức thì.',
         gridSpan: 5
@@ -225,7 +211,7 @@ const FEATURE_BLOCKS = [
         points: [
             {
                 title: 'Tùy chỉnh 20 thông số dấu vân tay',
-                desc: 'Dolphin có thể kiểm soát 20 thông số và tạo dấu vân tay độc nhất cho bất kỳ hệ điều hành nào, bao gồm iOS và Android.',
+                desc: 'FastST có thể kiểm soát 20 thông số và tạo dấu vân tay độc nhất cho bất kỳ hệ điều hành nào, bao gồm iOS và Android.',
             },
             {
                 title: 'Thay đổi tên thiết bị',
@@ -270,8 +256,8 @@ const FEATURE_BLOCKS = [
                 desc: 'Tự động hóa tài khoản và thao tác hồ sơ thông qua API của chúng tôi.',
             },
             {
-                title: 'Chuyển profile sang Dolphin{cloud}',
-                desc: 'Chuyển profile sang Dolphin{cloud} chỉ với vài cú nhấp chuột — hoạt động ngầm, không cần extension.',
+                title: 'Chuyển profile sang FastST{cloud}',
+                desc: 'Chuyển profile sang FastST{cloud} chỉ với vài cú nhấp chuột — hoạt động ngầm, không cần extension.',
             },
         ],
     },
@@ -279,22 +265,18 @@ const FEATURE_BLOCKS = [
 
 const SECURITY = [
     {
-        icon: '☁️',
         title: 'Đồng bộ hóa đám mây',
         desc: 'Lưu trữ hồ sơ, cookie, proxy và tiện ích mở rộng. Làm việc trên mọi thiết bị Windows, Mac hoặc Linux mọi lúc, mọi nơi.',
     },
     {
-        icon: '🔌',
         title: 'Tự động hóa API linh hoạt',
         desc: 'Tự động hóa các tài khoản và thao tác của hồ sơ với API của chúng tôi.',
     },
     {
-        icon: '🔒',
         title: 'Dữ liệu của bạn được bảo vệ',
         desc: 'Thông tin của bạn luôn được bảo mật. Chỉ bạn mới có quyền truy cập vào thông tin của chính mình.',
     },
     {
-        icon: '💾',
         title: 'Đồng bộ profile cục bộ',
         desc: 'Tùy chọn tắt đồng bộ đám mây và lưu trữ profile cục bộ trên thiết bị của bạn.',
     },
@@ -304,12 +286,12 @@ const TESTIMONIALS = [
     {
         name: 'Dmitry Medvedko',
         role: 'Owner CPA.LIVE',
-        text: 'Tôi đã đồng hành cùng Dolphin{anty} với vai trò webmaster và quản lý truyền thông từ khi phiên bản beta ra mắt. Đội ngũ Dolphin{anty} thực sự chuyên nghiệp, và làm việc với họ cùng sản phẩm của họ là một trải nghiệm tuyệt vời. Rất đáng để thử!',
+        text: 'Tôi đã đồng hành cùng FastST với vai trò webmaster và quản lý truyền thông từ khi phiên bản beta ra mắt. Đội ngũ FastST thực sự chuyên nghiệp, và làm việc với họ cùng sản phẩm của họ là một trải nghiệm tuyệt vời. Rất đáng để thử!',
     },
     {
         name: 'Jack // PIRATE CPA',
         role: 'Tiếp thị liên kết',
-        text: 'Dolphin{anty} hoạt động hoàn hảo trên tất cả các nền tảng phổ biến như Facebook, Instagram, Google, YouTube, Twitter, TikTok. Giao diện trực quan và dễ sử dụng là một trong những ưu điểm lớn nhất. Hầu hết nội dung của chúng tôi trên các phương tiện truyền thông đều được tạo ra trên trình duyệt này.',
+        text: 'FastST hoạt động hoàn hảo trên tất cả các nền tảng phổ biến như Facebook, Instagram, Google, YouTube, Twitter, TikTok. Giao diện trực quan và dễ sử dụng là một trong những ưu điểm lớn nhất. Hầu hết nội dung của chúng tôi trên các phương tiện truyền thông đều được tạo ra trên trình duyệt này.',
     },
     {
         name: 'NoFomo',
@@ -387,7 +369,7 @@ function Header({ tab, setTab, scrolled, lang, setLang }: { tab: string, setTab:
             <div className="container header-inner">
                 <a href="#" className="logo" onClick={(e) => { e.preventDefault(); setTab('features'); }}>
                     <span className="logo-mark">🐬</span>
-                    <span className="logo-text">Dolphin<span>{'{anty}'}</span></span>
+                    <span className="logo-text">FastST</span>
                 </a>
                 <nav className="nav">
                     <div className="nav-tabs">
@@ -572,7 +554,7 @@ function FeaturesView({ lang }: { lang: 'vi' | 'en' }) {
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
                             >
-                                <div className="security-icon">{s.icon}</div>
+                                <div className="security-icon"></div>
                                 <h3>{s.title}</h3>
                                 <p>{s.desc}</p>
                             </motion.div>
@@ -607,7 +589,7 @@ function UseCasesView({ lang }: { lang: 'vi' | 'en' }) {
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
                             >
-                                <div className="use-case-icon">{u.icon}</div>
+                                <div className="use-case-icon"></div>
                                 <h3>{u.title}</h3>
                                 <p>{u.desc}</p>
                             </motion.div>
@@ -652,8 +634,13 @@ function UseCasesView({ lang }: { lang: 'vi' | 'en' }) {
 function PricingView({ yearly, setYearly, lang }: { yearly: boolean, setYearly: (y: boolean) => void, lang: 'vi' | 'en' }) {
     const t = translations[lang]
     const formatPrice = (p: number) => p.toLocaleString('vi-VN')
-    
-    const price = (plan: any) => (yearly ? plan.yearly : plan.monthly)
+
+    const getDisplayPrice = (plan: any) => {
+        if (yearly) {
+            return Math.round(plan.yearly / 12)
+        }
+        return plan.monthly
+    }
     const billedNote = (plan: any) => {
         if (plan.monthly === 0) return t.pricing.freeAlways
         const priceStr = `${formatPrice(plan.yearly)}₫`
@@ -699,14 +686,17 @@ function PricingView({ yearly, setYearly, lang }: { yearly: boolean, setYearly: 
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
                             >
-                                <div className={`plan-icon ${plan.iconClass}`}>{plan.icon}</div>
                                 <h3 className="plan-name">{plan.name}</h3>
                                 <p className="plan-desc">{plan.desc}</p>
                                 <div className="plan-price">
-                                    <span className="amount">{formatPrice(price(plan))}</span>
-                                    <span className="currency">₫ {yearly ? t.pricing.perYear : t.pricing.perMonth}</span>
+                                    <span className="amount">{formatPrice(getDisplayPrice(plan))}</span>
+                                    <span className="currency">₫ / {t.pricing.perMonth}</span>
+                                    <span className="original-price" style={{ visibility: (yearly && plan.monthly > 0) ? 'visible' : 'hidden' }}>
+                                        {plan.monthly > 0 ? `${formatPrice(plan.monthly)}₫/${t.pricing.perMonth}` : ''}
+                                    </span>
+                                    {plan.monthly === 0 && <span className="plan-price-spacer" />}
                                 </div>
-                                <div className="plan-billed">{billedNote(plan)}</div>
+                                <div className="plan-billed">{plan.monthly === 0 ? t.pricing.freeAlways : billedNote(plan)}</div>
                                 <div className="plan-cta">
                                     <button
                                         className={`btn btn-block ${plan.ctaStyle === 'primary' ? 'btn-primary' : 'btn-outline'}`}
@@ -810,22 +800,20 @@ function DocumentationView({ lang }: { lang: 'vi' | 'en' }) {
     const t = translations[lang]
     const docs = [
         {
-            icon: '🚀',
             title: lang === 'vi' ? 'Bắt đầu' : 'Get Started',
             items: lang === 'vi' ? [
-                'Cài đặt Dolphin{anty}',
+                'Cài đặt FastST',
                 'Tạo hồ sơ đầu tiên',
                 'Quản lý proxy',
                 'Sử dụng dấu vân tay',
             ] : [
-                'Installing Dolphin{anty}',
+                'Installing FastST',
                 'Creating your first profile',
                 'Managing proxies',
                 'Using fingerprints',
             ],
         },
         {
-            icon: '⚙️',
             title: lang === 'vi' ? 'Tính năng nâng cao' : 'Advanced Features',
             items: lang === 'vi' ? [
                 'Tự động hóa & API',
@@ -840,7 +828,6 @@ function DocumentationView({ lang }: { lang: 'vi' | 'en' }) {
             ],
         },
         {
-            icon: '🎥',
             title: lang === 'vi' ? 'Hướng dẫn video' : 'Video Tutorials',
             items: lang === 'vi' ? [
                 'Video hướng dẫn cho người mới',
@@ -874,7 +861,7 @@ function DocumentationView({ lang }: { lang: 'vi' | 'en' }) {
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
                             >
-                                <div className="use-case-icon">{doc.icon}</div>
+                                <div className="use-case-icon"></div>
                                 <h3>{doc.title}</h3>
                                 <div className="docs-list">
                                     {doc.items.map((item) => {
@@ -970,8 +957,7 @@ export default function App() {
                     <div className="footer-top">
                         <div className="footer-brand">
                             <a href="#" className="logo" onClick={(e) => { e.preventDefault(); setTab('features'); }}>
-                                <span className="logo-mark">🐬</span>
-                                <span className="logo-text">Dolphin<span>{'{anty}'}</span></span>
+                                <span className="logo-text">FastST</span>
                             </a>
                             <p>{t.footer.desc}</p>
                         </div>

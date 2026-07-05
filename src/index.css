@@ -605,6 +605,18 @@ a {
     margin-top: 4px;
 }
 
+.original-price {
+    font-size: 14px;
+    color: var(--text-dim);
+    text-decoration: line-through;
+    margin-top: 4px;
+}
+
+.plan-price-spacer {
+    display: block;
+    height: 22px;
+}
+
 .plan-price .period {
     font-size: 14px;
     color: var(--text-dim);
@@ -763,10 +775,16 @@ a {
 
 .compare-cell-yes {
     color: var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .compare-cell-no {
     color: var(--text-dim);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .compare-cell-text {
