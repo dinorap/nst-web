@@ -242,7 +242,7 @@ function FeaturesView({ lang }: { lang: 'vi' | 'en' }) {
             <HeroSection
                 lang={lang}
                 eyebrow={t.hero.features.eyebrow}
-                title={lang === 'vi' ? <>Trình duyệt chống phát hiện <br /><span className="grad">tối ưu cho hiệu suất</span></> : <>Antidetect browser <br /><span className="grad">optimized for performance</span></>}
+                title={lang === 'vi' ? <><span>Trình duyệt chống phát hiện</span><span className="grad">tối ưu cho hiệu suất</span></> : <><span>Antidetect browser</span><span className="grad">optimized for performance</span></>}
                 subtitle={t.hero.features.subtitle}
             />
 
@@ -714,7 +714,6 @@ export default function App() {
                                     <li><button className="footer-link-btn" onClick={() => { setTab('features'); scrollToSection('features'); }}>{t.nav.features}</button></li>
                                     <li><button className="footer-link-btn" onClick={() => { setTab('pricing'); scrollToSection('pricing'); }}>{t.nav.pricing}</button></li>
                                     <li><button className="footer-link-btn" onClick={() => { setTab('features'); scrollToSection('features'); }}>{t.hero.cta.download}</button></li>
-                                    <li><a href="#">{t.nav.docs}</a></li>
                                 </ul>
                             </div>
                             <div className="footer-col">

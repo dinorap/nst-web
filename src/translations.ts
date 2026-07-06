@@ -119,8 +119,8 @@ export const translations: Translations = {
             product: 'Sản phẩm',
             resources: 'Tài nguyên',
             company: 'Công ty',
-            rights: '© 2026 Zhitnyakov software solutions LTD. All rights reserved.',
-            address: 'Địa chỉ: Georgiou A\'13, Stala Court off. 3, Germasogeia 4040, Limassol, Cyprus',
+            rights: '© 2026 ONX LLC - Opportunity Next Expansion. All rights reserved.',
+            address: 'Địa chỉ: 1250 Innovation Avenue, Suite 408, Westbridge, CA 90210, United States',
             blog: 'Blog',
             support: 'Hỗ trợ',
             about: 'Về chúng tôi',
@@ -355,7 +355,7 @@ export const translations: Translations = {
                 {
                     group: 'Quản lý hồ sơ',
                     rows: [
-                        { label: 'Số hồ sơ trình duyệt', values: ['10', '50.000', '500.000'] },
+                        { label: 'Số hồ sơ trình duyệt', values: ['50', '50.000', '500.000'] },
                         { label: 'Số hồ sơ tiêu chuẩn/ngày', values: ['10/ngày', '3.000/ngày', '60.000/ngày'] },
                         { label: 'Hồ sơ di động', values: [false, true, true] },
                         { label: 'Sao chép hồ sơ', values: [false, true, true] },
@@ -486,8 +486,8 @@ export const translations: Translations = {
             product: 'Product',
             resources: 'Resources',
             company: 'Company',
-            rights: '© 2026 Zhitnyakov software solutions LTD. All rights reserved.',
-            address: 'Address: Georgiou A\'13, Stala Court off. 3, Germasogeia 4040, Limassol, Cyprus',
+            rights: '© 2026 ONX LLC - Opportunity Next Expansion. All rights reserved.',
+            address: 'Address: 1250 Innovation Avenue, Suite 408, Westbridge, CA 90210, United States',
             blog: 'Blog',
             support: 'Support',
             about: 'About us',
@@ -722,7 +722,7 @@ export const translations: Translations = {
                 {
                     group: 'Profile Management',
                     rows: [
-                        { label: 'Number of browser profiles', values: ['10', '50,000', '500,000'] },
+                        { label: 'Number of browser profiles', values: ['50', '50,000', '500,000'] },
                         { label: 'Number of standard profiles/day', values: ['10/day', '3,000/day', '60,000/day'] },
                         { label: 'Mobile profiles', values: [false, true, true] },
                         { label: 'Profile copying', values: [false, true, true] },
