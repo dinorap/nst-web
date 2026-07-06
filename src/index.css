@@ -698,7 +698,7 @@ a {
 
 .compare-row {
     display              : grid;
-    grid-template-columns: 1.6fr repeat(5, 1fr);
+    grid-template-columns: 1.8fr repeat(3, 1fr);
     align-items          : center;
 }
 
@@ -708,13 +708,13 @@ a {
 
 .compare-row.head {
     background: var(--surface-2);
-    padding   : 20px 0;
+    padding   : 18px 0;
 }
 
 .compare-row.head .col {
     text-align : center;
     font-weight: 700;
-    font-size  : 16px;
+    font-size  : 15px;
 }
 
 .compare-row.head .col.first {
@@ -729,14 +729,14 @@ a {
 
 .compare-row.head .col .price-small {
     display    : block;
-    font-size  : 13px;
+    font-size  : 12px;
     font-weight: 500;
     color      : var(--text-muted);
-    margin-top : 2px;
+    margin-top : 4px;
 }
 
 .compare-row .col {
-    padding   : 16px 8px;
+    padding   : 14px 10px;
     text-align: center;
     font-size : 14px;
     color     : var(--text-muted);
@@ -751,9 +751,9 @@ a {
 
 .compare-group {
     grid-column   : 1 / -1;
-    padding       : 14px 24px;
+    padding       : 12px 24px;
     background    : rgba(46, 125, 255, 0.06);
-    font-size     : 13px;
+    font-size     : 12px;
     font-weight   : 700;
     color         : var(--primary);
     text-transform: uppercase;
