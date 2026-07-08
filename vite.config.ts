@@ -1,21 +1,24 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import {defineConfig} from 'vite';
+import { defineConfig } from 'vite';
 
+// Landing page for the FastST license server.
+// `outDir` is set to ../static/landing so `vite build` writes directly into the
+// folder that FastAPI mounts at "/" (see ../../main.py → FileResponse("static/landing/index.html"))
+// and "/assets" (app.mount("/assets", StaticFiles(directory="static/landing/assets"))).
+// `base: "./"` keeps hashed asset URLs in the built index.html relative, which is
+// what FastAPI's /assets/... mount expects.
 export default defineConfig(() => {
   return {
     plugins: [react(), tailwindcss()],
-    resolve: {
-      alias: {
-        '@': path.resolve(__dirname, '.'),
-      },
+    base: './',
+    build: {
+      outDir: path.resolve(__dirname, '../static/landing'),
+      emptyOutDir: true,
     },
     server: {
-      // HMR is disabled in AI Studio via DISABLE_HMR env var.
-      // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
-      // Disable file watching when DISABLE_HMR is true to save CPU during agent edits.
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
   };

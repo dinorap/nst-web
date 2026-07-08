@@ -9,8 +9,6 @@ export interface Plan {
     featured?: boolean;
     users?: number;
     profilesPerDay?: number;
-    overageMonthly?: number;
-    overageYearly?: number;
     features: string[];
 }
 
@@ -27,6 +25,7 @@ export interface Translations {
         featureBlocks: unknown[];
         security: Record<string, unknown>;
         faq: Record<string, string>;
+        account: Record<string, string>;
         plans: Record<string, Plan>;
         comparison: { groups: Array<{ group: string; rows: Array<{ label: string; values: Array<string | boolean> }> }> };
         faqs: Array<{ q: string; a: string }>;
@@ -43,6 +42,7 @@ export interface Translations {
         featureBlocks: unknown[];
         security: Record<string, unknown>;
         faq: Record<string, string>;
+        account: Record<string, string>;
         plans: Record<string, Plan>;
         comparison: { groups: Array<{ group: string; rows: Array<{ label: string; values: Array<string | boolean> }> }> };
         faqs: Array<{ q: string; a: string }>;
@@ -53,12 +53,16 @@ export const translations: Translations = {
     vi: {
         nav: {
             features: 'Tính năng',
-            useCases: 'Sử dụng',
+            useCases: 'Ứng dụng',
             pricing: 'Giá cả',
             faq: 'FAQ',
             docs: 'Tài liệu',
+            download: 'Tải xuống',
             login: 'Đăng nhập',
             register: 'Đăng ký',
+            logout: 'Đăng xuất',
+            viewAccount: 'Xem tài khoản',
+            adminPanel: 'Trang quản trị',
         },
         hero: {
             features: {
@@ -105,12 +109,76 @@ export const translations: Translations = {
             compareSubtitle: 'Xem bảng so sánh để biết sự khác biệt giữa các gói',
             features: 'Tính năng',
             planUsers: 'Người dùng',
-            planProfiles: 'Profile/ngày',
-            overage: 'Vượt mức {price}/1 profile',
+            planProfiles: 'Open profile/ngày',
+            upgradeSuccess: 'Đã nâng cấp thành công!',
+            linkedAccountWarn: 'Tài khoản Linked Account không thể tự nâng cấp. Vui lòng nâng cấp từ tài khoản chính.',
+            linkedAccountBanner: 'Bạn đang dùng tài khoản Linked. Bạn có thể hạ cấp về Free, nhưng không thể tự nâng cấp — vui lòng nâng cấp từ tài khoản chính.',
+            currentPlanBanner: 'Bạn đang dùng gói {plan}.',
+            yourCurrentPlan: 'Gói hiện tại',
+            downgradeWarn: 'Cảnh báo: Bạn đang chọn gói thấp hơn gói hiện tại. Một số tính năng sẽ bị giảm.',
+            downgradeHint: 'Bấm để chọn gói này',
+            chooseFree: 'Chọn Free',
+            choosePlanLabel: (name: string) => `Chọn ${name}`,
+            confirmDowngrade: 'Xác nhận hạ cấp',
+            confirmUpgrade: 'Xác nhận nâng cấp lên',
+            confirmRenew: (name: string) => `✓ Xác nhận gia hạn gói ${name}`,
+            renewPlanLabel: 'Gia hạn / Mua thêm',
+            backToApp: '← Quay lại App',
+        },
+        account: {
+            title: 'Thông tin tài khoản',
+            viewAccount: 'Xem tài khoản',
+            close: 'Đóng',
+            profile: 'Hồ sơ',
+            email: 'Email',
+            name: 'Tên hiển thị',
+            plan: 'Gói hiện tại',
+            billingCycle: 'Chu kỳ thanh toán',
+            monthly: 'Hàng tháng',
+            yearly: 'Hàng năm',
+            startedAt: 'Ngày đăng ký',
+            expiresAt: 'Ngày hết hạn',
+            lifetime: 'Vĩnh viễn',
+            noExpiry: 'Không giới hạn',
+            quotaTitle: 'Hạn mức sử dụng hôm nay',
+            quotaUsed: 'Đã dùng',
+            quotaLimit: 'Giới hạn',
+            quotaResetsAt: 'Đặt lại lúc 00:00 mỗi ngày',
+            quotaGroupNote: 'Bao gồm cả các tài khoản liên kết',
+            notVip: 'Bạn đang dùng gói miễn phí. Nâng cấp để mở khóa thêm tính năng.',
+            upgradeNow: 'Nâng cấp ngay',
+            linkedTitle: 'Tài khoản liên kết',
+            linkedDesc: 'Chia sẻ quota hàng ngày với các mail khác. Tối đa {max} mail.',
+            linkedCountLabel: 'Đã dùng {current}/{max}',
+            addLinked: 'Thêm email liên kết',
+            addLinkedPlaceholder: 'vidu@gmail.com',
+            addLinkedHint: 'Email chưa đăng ký gói trả phí sẽ được thêm ngay.',
+            noLinked: 'Chưa có email liên kết nào.',
+            addedAt: 'Thêm lúc',
+            edit: 'Sửa',
+            remove: 'Xóa',
+            unlinkMyself: 'Hủy liên kết với chủ sở hữu',
+            unlinkMyselfDesc: 'Bạn đang được {owner} chia sẻ quota. Bấm để hủy liên kết.',
+            unlinkConfirm: 'Bạn chắc chắn muốn hủy liên kết? Tài khoản của bạn sẽ quay về gói miễn phí.',
+            removeConfirm: 'Bạn chắc chắn muốn xóa {email} khỏi danh sách liên kết?',
+            cancel: 'Hủy',
+            confirm: 'Xác nhận',
+            addSuccess: 'Đã thêm {email} vào danh sách liên kết.',
+            removeSuccess: 'Đã xóa {email} khỏi danh sách liên kết.',
+            unlinkSuccess: 'Đã hủy liên kết khỏi {owner}.',
+            editLinkedTitle: 'Sửa email liên kết',
+            editLinkedDesc: 'Xóa email cũ rồi thêm lại email mới nếu cần đổi.',
+            errorEmailInvalid: 'Email không hợp lệ.',
+            errorEmailSelf: 'Không thể thêm email của chính bạn.',
+            errorLimitReached: 'Bạn đã đạt giới hạn {max} email liên kết.',
+            errorAlreadyLinked: 'Email này đã được liên kết bởi tài khoản khác.',
+            errorHasPlan: 'Email này đã đăng ký gói trả phí, không thể liên kết.',
+            errorNotVip: 'Chỉ tài khoản gói Base/Team mới có thể thêm email liên kết.',
+            errorNetwork: 'Lỗi kết nối. Vui lòng thử lại.',
         },
         cta: {
             title: 'Bắt đầu hành trình của bạn ngay hôm nay',
-            subtitle: 'Đăng ký và nhận 10 hồ sơ trình duyệt miễn phí — trải nghiệm đầy đủ sức mạnh của FastST.',
+            subtitle: 'Đăng nhập và nhận 10 hồ sơ trình duyệt miễn phí — trải nghiệm đầy đủ sức mạnh của FastST.',
             btn: 'Đăng ký miễn phí',
             contact: 'Liên hệ bán hàng',
         },
@@ -118,15 +186,18 @@ export const translations: Translations = {
             desc: 'Trình duyệt chống phát hiện hàng đầu cho quản lý nhiều hồ sơ và làm việc nhóm.',
             product: 'Sản phẩm',
             resources: 'Tài nguyên',
-            company: 'Công ty',
+            downloads: 'Tải xuống',
             rights: '© 2026 ONX LLC - Opportunity Next Expansion. All rights reserved.',
             address: 'Địa chỉ: 1250 Innovation Avenue, Suite 408, Westbridge, CA 90210, United States',
-            blog: 'Blog',
+            features: 'Tính năng',
+            pricing: 'Giá cả',
+            usage: 'Ứng dụng',
+            guides: 'Tài liệu hướng dẫn',
+            faq: 'Câu hỏi thường gặp',
             support: 'Hỗ trợ',
-            about: 'Về chúng tôi',
-            contact: 'Liên hệ',
-            terms: 'Điều khoản',
-            privacy: 'Bảo mật',
+            windows: 'Dành cho Windows',
+            macos: 'Dành cho MacOS',
+            linux: 'Dành cho Linux',
         },
         docs: {
             title: 'Trung tâm hỗ trợ',
@@ -206,8 +277,8 @@ export const translations: Translations = {
                 desc: 'Khi tạo hồ sơ nhanh, chúng tôi sẽ sử dụng dấu vân tay thật. Thế nên bạn không cần phải tốn quá nhiều thời gian để thiết lập lại hồ sơ trước khi khởi chạy.',
                 points: [
                     {
-                        title: 'Tùy chỉnh 20 thông số dấu vân tay',
-                        desc: 'FastST có thể kiểm soát 20 thông số và tạo dấu vân tay độc nhất cho bất kỳ hệ điều hành nào, bao gồm iOS và Android.',
+                        title: 'Tùy chỉnh hơn 170 thông số dấu vân tay',
+                        desc: 'FastST có thể kiểm soát hơn 170 thông số và tạo dấu vân tay độc nhất cho bất kỳ hệ điều hành nào, bao gồm iOS và Android.',
                     },
                     {
                         title: 'Thay đổi tên thiết bị',
@@ -294,10 +365,10 @@ export const translations: Translations = {
                 ctaStyle: 'outline',
                 users: 1,
                 profilesPerDay: 10,
-                overageMonthly: 0.02,
-                overageYearly: 0.01,
+
+
                 features: [
-                    '10 profile/ngày',
+                    '10 Open profile/ngày',
                     'Quản lý proxy cơ bản',
                     '1 thành viên',
                     'Hỗ trợ qua email',
@@ -306,7 +377,7 @@ export const translations: Translations = {
             base: {
                 id: 'base',
                 name: 'Base',
-                desc: 'Nhóm 50 user',
+                desc: 'Nhóm 50 thành viên',
                 monthly: 39.9,
                 yearly: 358.8,
                 cta: 'Chọn Base',
@@ -314,11 +385,11 @@ export const translations: Translations = {
                 featured: true,
                 users: 50,
                 profilesPerDay: 3000,
-                overageMonthly: 0.02,
-                overageYearly: 0.01,
+
+
                 features: [
-                    '50 người dùng',
-                    '3.000 profile/ngày',
+                    '50 thành viên nhóm',
+                    '3.000 Open profile/ngày',
                     'Quản lý proxy nâng cao',
                     'Thao tác hàng loạt',
                     'Tự động hóa & API',
@@ -329,18 +400,18 @@ export const translations: Translations = {
             team: {
                 id: 'team',
                 name: 'Team',
-                desc: 'Nhóm 150 user',
+                desc: 'Nhóm 150 thành viên',
                 monthly: 79.9,
                 yearly: 838.8,
                 cta: 'Chọn Team',
                 ctaStyle: 'outline',
                 users: 150,
                 profilesPerDay: 60000,
-                overageMonthly: 0.02,
-                overageYearly: 0.01,
+
+
                 features: [
-                    '150 người dùng',
-                    '60.000 profile/ngày',
+                    '150 thành viên nhóm',
+                    '60.000 Open profile/ngày',
                     'Quản lý proxy nâng cao',
                     'Thao tác hàng loạt',
                     'Tự động hóa & API',
@@ -355,10 +426,10 @@ export const translations: Translations = {
                 {
                     group: 'Quản lý hồ sơ',
                     rows: [
-                        { label: 'Số hồ sơ trình duyệt', values: ['50', '50.000', '500.000'] },
+
                         { label: 'Số hồ sơ tiêu chuẩn/ngày', values: ['10/ngày', '3.000/ngày', '60.000/ngày'] },
-                        { label: 'Hồ sơ di động', values: [false, true, true] },
-                        { label: 'Sao chép hồ sơ', values: [false, true, true] },
+                        { label: 'Hồ sơ di động', values: [true, true, true] },
+                        { label: 'Sao chép hồ sơ', values: [true, true, true] },
                     ],
                 },
                 {
@@ -401,31 +472,51 @@ export const translations: Translations = {
             },
             {
                 q: 'Có dùng thử miễn phí không?',
-                a: 'Có. Gói Free cho phép bạn tạo 10 hồ sơ trình duyệt miễn phí vĩnh viễn, không cần thẻ tín dụng. Bạn cũng có thể dùng thử các tính năng cao cấp trong 7 ngày.',
+                a: 'Có. Gói Free cho phép bạn tạo hồ sơ trình duyệt miễn phí vĩnh viễn với 10 lần truy cập mỗi ngày, không cần thẻ tín dụng. Bạn cũng có thể trải nghiệm các tính năng cao cấp trước khi mua.',
             },
             {
                 q: 'Phương thức thanh toán nào được chấp nhận?',
-                a: 'Chúng tôi chấp nhận thẻ tín dụng (Visa, Mastercard, American Express), PayPal và chuyển khoản ngân hàng cho các gói Enterprise.',
+                a: 'Chúng tôi hỗ trợ chuyển khoản ngân hàng qua quét mã QR (cổng Sepay). Giao dịch được xử lý hoàn toàn tự động và gói cước sẽ được kích hoạt ngay lập tức.',
             },
             {
                 q: 'Chính sách hoàn tiền như thế nào?',
-                a: 'Chúng tôi cung cấp chính sách hoàn tiền trong 14 ngày cho tất cả các gói trả phí. Nếu bạn không hài lòng, liên hệ với chúng tôi để được hoàn tiền đầy đủ.',
+                a: 'Chúng tôi hỗ trợ hoàn tiền trong 7 ngày đầu nếu bạn gặp lỗi kỹ thuật không thể khắc phục được khi sử dụng.',
             },
             {
                 q: 'Tôi có được giảm giá khi thanh toán theo năm không?',
-                a: 'Có. Khi thanh toán theo năm, bạn tiết kiệm khoảng 17% so với thanh toán hàng tháng cho mọi gói trả phí.',
+                a: 'Có. Khi chọn thanh toán theo năm, bạn sẽ được giảm giá lên đến 25% so với chu kỳ thanh toán hàng tháng.',
             },
+            {
+                q: 'Trình duyệt FastST có hỗ trợ đồng bộ dữ liệu đa thiết bị không?',
+                a: 'Có. Toàn bộ cookie, lịch sử duyệt web, mật khẩu đã lưu và tiện ích mở rộng (extensions) sẽ được đồng bộ hóa mã hóa đầu cuối thông qua hệ thống FastST Cloud, giúp bạn tiếp tục làm việc trên bất kỳ máy tính nào.',
+            },
+            {
+                q: 'FastST giải quyết việc rò rỉ WebRTC và DNS như thế nào?',
+                a: 'FastST tự động định tuyến toàn bộ kết nối WebRTC và truy vấn DNS thông qua proxy được cấu hình cho profile. Chúng tôi cũng hỗ trợ tắt hoàn toàn WebRTC hoặc hạn chế ở chế độ TCP-only khi proxy không hỗ trợ UDP để đảm bảo địa chỉ IP thật của bạn không bao giờ bị rò rỉ.',
+            },
+            {
+                q: 'Tôi có thể sử dụng các extension từ Chrome Web Store không?',
+                a: 'Có, FastST hoàn toàn tương thích với tất cả các tiện ích mở rộng trên Chrome Web Store. Bạn có thể cài đặt trực tiếp từ cửa hàng hoặc tải lên file .crx / thư mục extension đã giải nén để quản lý tập trung cho toàn bộ các profile.',
+            },
+            {
+                q: 'Tài khoản Linked Account hoạt động như thế nào?',
+                a: 'Linked Account cho phép bạn thêm email của nhân viên hoặc thành viên nhóm vào hệ thống. Họ có thể sử dụng quota mở profile hàng ngày của bạn mà không cần biết thông tin đăng nhập tài khoản chính, giúp quản lý công việc và chia sẻ tài nguyên an toàn.',
+            }
         ],
     },
     en: {
         nav: {
             features: 'Features',
-            useCases: 'Use Cases',
+            useCases: 'Applications',
             pricing: 'Pricing',
             faq: 'FAQ',
             docs: 'Documentation',
+            download: 'Download',
             login: 'Login',
             register: 'Sign up',
+            logout: 'Sign out',
+            viewAccount: 'View account',
+            adminPanel: 'Admin panel',
         },
         hero: {
             features: {
@@ -473,11 +564,75 @@ export const translations: Translations = {
             features: 'Features',
             planUsers: 'Users',
             planProfiles: 'Profiles/day',
-            overage: 'Overage {price}/1 profile',
+            upgradeSuccess: 'Upgrade successful!',
+            linkedAccountWarn: 'Linked accounts cannot upgrade by themselves. Please upgrade from the main account.',
+            linkedAccountBanner: 'You are using a Linked account. You can downgrade to Free, but cannot upgrade by yourself — please upgrade from the main account.',
+            currentPlanBanner: 'You are currently on the {plan} plan.',
+            yourCurrentPlan: 'Current plan',
+            downgradeWarn: 'Warning: You are selecting a lower plan. Some features will be reduced.',
+            downgradeHint: 'Click to select this plan',
+            chooseFree: 'Choose Free',
+            choosePlanLabel: (name: string) => `Choose ${name}`,
+            confirmDowngrade: 'Confirm downgrade',
+            confirmUpgrade: 'Confirm upgrade to',
+            confirmRenew: (name: string) => `✓ Confirm renew ${name} plan`,
+            renewPlanLabel: 'Renew / Purchase more',
+            backToApp: '← Back to App',
+        },
+        account: {
+            title: 'Account Information',
+            viewAccount: 'View account',
+            close: 'Close',
+            profile: 'Profile',
+            email: 'Email',
+            name: 'Display name',
+            plan: 'Current plan',
+            billingCycle: 'Billing cycle',
+            monthly: 'Monthly',
+            yearly: 'Yearly',
+            startedAt: 'Subscription started',
+            expiresAt: 'Subscription expires',
+            lifetime: 'Lifetime',
+            noExpiry: 'No expiry',
+            quotaTitle: "Today's usage",
+            quotaUsed: 'Used',
+            quotaLimit: 'Limit',
+            quotaResetsAt: 'Resets at 00:00 daily',
+            quotaGroupNote: 'Includes all linked accounts',
+            notVip: 'You are on the Free plan. Upgrade to unlock more features.',
+            upgradeNow: 'Upgrade now',
+            linkedTitle: 'Linked accounts',
+            linkedDesc: 'Share your daily quota with other emails. Up to {max} emails.',
+            linkedCountLabel: 'Used {current}/{max}',
+            addLinked: 'Add linked email',
+            addLinkedPlaceholder: 'example@gmail.com',
+            addLinkedHint: 'Emails without a paid plan will be added instantly.',
+            noLinked: 'No linked emails yet.',
+            addedAt: 'Added on',
+            edit: 'Edit',
+            remove: 'Remove',
+            unlinkMyself: 'Unlink from owner',
+            unlinkMyselfDesc: 'You are sharing quota with {owner}. Click to unlink.',
+            unlinkConfirm: 'Are you sure you want to unlink? Your account will revert to the Free plan.',
+            removeConfirm: 'Are you sure you want to remove {email} from linked accounts?',
+            cancel: 'Cancel',
+            confirm: 'Confirm',
+            addSuccess: 'Added {email} to linked accounts.',
+            removeSuccess: 'Removed {email} from linked accounts.',
+            unlinkSuccess: 'Unlinked from {owner}.',
+            editLinkedTitle: 'Edit linked email',
+            editLinkedDesc: 'Remove the old one and re-add a new email if you need to change it.',
+            errorEmailInvalid: 'Invalid email.',
+            errorEmailSelf: 'You cannot add your own email.',
+            errorLimitReached: 'You have reached the limit of {max} linked emails.',
+            errorAlreadyLinked: 'This email is already linked by another account.',
+            errorHasPlan: 'This email is on a paid plan and cannot be linked.',
+            errorNotVip: 'Only Base/Team plan users can add linked emails.',
+            errorNetwork: 'Network error. Please try again.',
         },
         cta: {
             title: 'Start your journey today',
-            subtitle: 'Sign up and get 10 free browser profiles — experience the full power of FastST.',
+            subtitle: 'Sign in and get 10 free browser profiles — experience the full power of FastST.',
             btn: 'Sign up for free',
             contact: 'Contact sales',
         },
@@ -485,15 +640,18 @@ export const translations: Translations = {
             desc: 'Leading antidetect browser for multi-profile management and teamwork.',
             product: 'Product',
             resources: 'Resources',
-            company: 'Company',
+            downloads: 'Downloads',
             rights: '© 2026 ONX LLC - Opportunity Next Expansion. All rights reserved.',
             address: 'Address: 1250 Innovation Avenue, Suite 408, Westbridge, CA 90210, United States',
-            blog: 'Blog',
+            features: 'Features',
+            pricing: 'Pricing',
+            usage: 'Applications',
+            guides: 'Documentation',
+            faq: 'FAQ',
             support: 'Support',
-            about: 'About us',
-            contact: 'Contact',
-            terms: 'Terms',
-            privacy: 'Privacy',
+            windows: 'Windows',
+            macos: 'MacOS',
+            linux: 'Linux',
         },
         docs: {
             title: 'Help Center',
@@ -573,8 +731,8 @@ export const translations: Translations = {
                 desc: 'When creating quick profiles, we will use real fingerprints. So you don\'t need to spend too much time setting up the profile again before launching.',
                 points: [
                     {
-                        title: 'Customize 20 fingerprint parameters',
-                        desc: 'FastST can control 20 parameters and generate unique fingerprints for any operating system, including iOS and Android.',
+                        title: 'Customize over 170 fingerprint parameters',
+                        desc: 'FastST can control over 170 parameters and generate unique fingerprints for any operating system, including iOS and Android.',
                     },
                     {
                         title: 'Change device name',
@@ -650,82 +808,81 @@ export const translations: Translations = {
         faq: {
             title: 'Frequently Asked Questions',
         },
-            plans: {
-                free: {
-                    id: 'free',
-                    name: 'Free',
-                    desc: 'For new users',
-                    monthly: 0,
-                    yearly: 0,
-                    cta: 'Start for free',
-                    ctaStyle: 'outline',
-                    users: 1,
-                    profilesPerDay: 10,
-                    overageMonthly: 0.02,
-                    overageYearly: 0.01,
-                    features: [
-                        '10 profiles/day',
-                        'Basic proxy management',
-                        '1 team member',
-                        'Email support',
-                    ],
-                },
-                base: {
-                    id: 'base',
-                    name: 'Base',
-                    desc: '50 users',
-                    monthly: 39.9,
-                    yearly: 358.8,
-                    cta: 'Choose Base',
-                    ctaStyle: 'primary',
-                    featured: true,
-                    users: 50,
-                    profilesPerDay: 3000,
-                    overageMonthly: 0.02,
-                    overageYearly: 0.01,
-                    features: [
-                        '50 users',
-                        '3,000 profiles/day',
-                        'Advanced proxy management',
-                        'Bulk operations',
-                        'Automation & API',
-                        'Block-style scripting',
-                        'Priority support 24/7',
-                    ],
-                },
-                team: {
-                    id: 'team',
-                    name: 'Team',
-                    desc: '150 users',
-                    monthly: 79.9,
-                    yearly: 838.8,
-                    cta: 'Choose Team',
-                    ctaStyle: 'outline',
-                    users: 150,
-                    profilesPerDay: 60000,
-                    overageMonthly: 0.02,
-                    overageYearly: 0.01,
-                    features: [
-                        '150 users',
-                        '60,000 profiles/day',
-                        'Advanced proxy management',
-                        'Bulk operations',
-                        'Automation & API',
-                        'Block-style scripting',
-                        'Third-party integrations',
-                        'Priority support 24/7',
-                    ],
-                },
+        plans: {
+            free: {
+                id: 'free',
+                name: 'Free',
+                desc: 'For new users',
+                monthly: 0,
+                yearly: 0,
+                cta: 'Start for free',
+                ctaStyle: 'outline',
+                users: 1,
+                profilesPerDay: 10,
+
+
+                features: [
+                    '10 profiles/day',
+                    'Basic proxy management',
+                    '1 team member',
+                    'Email support',
+                ],
             },
+            base: {
+                id: 'base',
+                name: 'Base',
+                desc: '50 users',
+                monthly: 39.9,
+                yearly: 358.8,
+                cta: 'Choose Base',
+                ctaStyle: 'primary',
+                featured: true,
+                users: 50,
+                profilesPerDay: 3000,
+
+
+                features: [
+                    '50 users',
+                    '3,000 profiles/day',
+                    'Advanced proxy management',
+                    'Bulk operations',
+                    'Automation & API',
+                    'Block-style scripting',
+                    'Priority support 24/7',
+                ],
+            },
+            team: {
+                id: 'team',
+                name: 'Team',
+                desc: '150 users',
+                monthly: 79.9,
+                yearly: 838.8,
+                cta: 'Choose Team',
+                ctaStyle: 'outline',
+                users: 150,
+                profilesPerDay: 60000,
+
+                features: [
+                    '150 users',
+                    '60,000 profiles/day',
+                    'Advanced proxy management',
+                    'Bulk operations',
+                    'Automation & API',
+                    'Block-style scripting',
+                    'Third-party integrations',
+                    'Priority support 24/7',
+                ],
+            },
+        },
         comparison: {
             groups: [
                 {
                     group: 'Profile Management',
                     rows: [
-                        { label: 'Number of browser profiles', values: ['50', '50,000', '500,000'] },
+
                         { label: 'Number of standard profiles/day', values: ['10/day', '3,000/day', '60,000/day'] },
-                        { label: 'Mobile profiles', values: [false, true, true] },
-                        { label: 'Profile copying', values: [false, true, true] },
+                        { label: 'Mobile profiles', values: [true, true, true] },
+                        { label: 'Profile copying', values: [true, true, true] },
                     ],
                 },
                 {
@@ -768,20 +925,36 @@ export const translations: Translations = {
             },
             {
                 q: 'Is there a free trial?',
-                a: 'Yes. The Free plan lets you create 10 browser profiles forever, with no credit card required. You can also try premium features for 7 days.',
+                a: 'Yes. The Free plan allows you to create a free browser profile permanently with 10 daily accesses, no credit card required. You can also experience premium features before purchasing.',
             },
             {
                 q: 'What payment methods are accepted?',
-                a: 'We accept credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers for Enterprise plans.',
+                a: 'We support automatic payments via bank transfer (QR code scanning). The transactions are processed instantly, and your plan will be active immediately.',
             },
             {
                 q: 'What is the refund policy?',
-                a: 'We offer a 14-day refund policy for all paid plans. If you are not satisfied, contact us for a full refund.',
+                a: 'We offer a 7-day refund policy in case of technical issues that cannot be resolved.',
             },
             {
                 q: 'Do I get a discount for annual billing?',
-                a: 'Yes. Annual billing saves you about 17% compared to monthly billing for all paid plans.',
+                a: 'Yes. Selecting annual billing saves you up to 25% compared to the monthly billing cycle.',
             },
+            {
+                q: 'Does FastST support multi-device data synchronization?',
+                a: 'Yes. All cookies, browsing history, saved passwords, and extensions are end-to-end encrypted and synced via FastST Cloud, letting you resume work on any computer.',
+            },
+            {
+                q: 'How does FastST resolve WebRTC and DNS leaks?',
+                a: 'FastST automatically routes all WebRTC connections and DNS queries through the proxy configured for the profile. We also support disabling WebRTC completely or clamping it to TCP-only if the proxy lacks UDP support, ensuring your real IP never leaks.',
+            },
+            {
+                q: 'Can I use Chrome Web Store extensions?',
+                a: 'Yes, FastST is fully compatible with all Chrome Web Store extensions. You can install them directly or upload .crx files/unpacked extension folders for centralized management.',
+            },
+            {
+                q: 'How do Linked Accounts work?',
+                a: 'Linked Accounts allow you to add emails of staff or team members. They share your daily profile launch quota without knowing your main account credentials, ensuring secure collaboration.',
+            }
         ],
     }
 };
