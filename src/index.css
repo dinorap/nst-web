@@ -3487,6 +3487,69 @@ a {
     }
 }
 
+/* Floating Telegram Button */
+.floating-telegram-btn {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0088cc 0%, #00acee 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0, 136, 204, 0.4), 0 0 20px rgba(0, 172, 238, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.floating-telegram-btn:hover {
+    transform: scale(1.1) translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 136, 204, 0.6), 0 0 30px rgba(0, 172, 238, 0.4);
+    color: #ffffff;
+}
+
+.floating-telegram-btn:active {
+    transform: scale(0.95);
+}
+
+.floating-telegram-btn svg {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.floating-telegram-btn:hover svg {
+    transform: rotate(5deg) scale(1.05);
+}
+
+/* Tooltip for floating telegram */
+.floating-telegram-btn::before {
+    content: "Chat qua Telegram";
+    position: absolute;
+    right: 76px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    backdrop-filter: blur(8px);
+}
+
+.floating-telegram-btn:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
 /* Floating Messenger Chat Button */
 .floating-chat-btn {
     position: fixed;
