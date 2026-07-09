@@ -1333,9 +1333,9 @@ function DownloadView({ lang }: { lang: 'vi' | 'en' }) {
             <section className="download-section" style={{ paddingBottom: '100px', textAlign: 'center' }}>
                 <div className="container">
                     <div style={{ display: 'flex', gap: '24px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '40px' }}>
-                        
+
                         {/* Windows card */}
-                        <motion.div 
+                        <motion.div
                             id="download-windows"
                             className="download-card"
                             initial={{ opacity: 0, y: 20 }}
@@ -1358,12 +1358,12 @@ function DownloadView({ lang }: { lang: 'vi' | 'en' }) {
                         >
                             <div className="os-icon-svg" style={{ color: '#0078d4', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '64px' }}>
                                 <svg viewBox="0 0 88 88" width="48" height="48" fill="currentColor">
-                                    <path d="M0 12.378L36.037 7.424V41.7H0V12.378z M0 45.3H36.037V79.576L0 74.622V45.3z M39.963 6.883L88 0V41.7H39.963V6.883z M39.963 45.3H88V88L39.963 81.117V45.3z"/>
+                                    <path d="M0 12.378L36.037 7.424V41.7H0V12.378z M0 45.3H36.037V79.576L0 74.622V45.3z M39.963 6.883L88 0V41.7H39.963V6.883z M39.963 45.3H88V88L39.963 81.117V45.3z" />
                                 </svg>
                             </div>
                             <h3 style={{ fontSize: '24px', margin: 0, color: 'var(--text)', fontWeight: 600 }}>Windows</h3>
                             <p style={{ color: 'var(--text-soft)', margin: 0, fontSize: '14px' }}>Windows 10 trở lên, 64-bit</p>
-                            <a 
+                            <a
                                 href={links.download_url_windows}
                                 className="btn btn-primary"
                                 style={{ width: '100%', textDecoration: 'none', marginTop: '12px' }}
@@ -1374,7 +1374,7 @@ function DownloadView({ lang }: { lang: 'vi' | 'en' }) {
                         </motion.div>
 
                         {/* MacOS card */}
-                        <motion.div 
+                        <motion.div
                             id="download-macos"
                             className="download-card"
                             initial={{ opacity: 0, y: 20 }}
@@ -1398,12 +1398,12 @@ function DownloadView({ lang }: { lang: 'vi' | 'en' }) {
                         >
                             <div className="os-icon-svg" style={{ color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '64px' }}>
                                 <svg viewBox="0 0 170 170" width="48" height="48" fill="currentColor">
-                                    <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.34.13-9.13-1.92-14.35-6.15-2.89-2.38-6.69-6.84-11.41-13.38-7.39-10.23-13.06-21.65-17-34.25-3.95-12.6-5.92-24.4-5.92-35.39 0-15.11 3.75-27.42 11.26-36.94 7.51-9.52 16.99-14.28 28.42-14.28 5.66 0 11.66 1.52 18.01 4.58 6.35 3.06 10.63 4.58 12.84 4.58 1.98 0 6.06-1.46 12.24-4.38 6.18-2.92 12.01-4.3 17.5-4.13 14.59.52 25.86 5.86 33.8 16.03-12.74 7.74-19 17.92-18.77 30.55.22 10.15 4.09 18.5 11.6 25.04 7.52 6.54 16.48 10.02 26.89 10.45-2.22 6.55-5.06 13.1-8.54 19.67zM119.22 4.11c0 7.74-2.8 15.08-8.41 22.02-5.61 6.94-12.57 11.27-20.9 13-1.12-7.85 1.76-15.34 7.21-22.14 5.45-6.81 12.74-11.08 21.05-12.88.75 0 1.05.52 1.05 0z"/>
+                                    <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.34.13-9.13-1.92-14.35-6.15-2.89-2.38-6.69-6.84-11.41-13.38-7.39-10.23-13.06-21.65-17-34.25-3.95-12.6-5.92-24.4-5.92-35.39 0-15.11 3.75-27.42 11.26-36.94 7.51-9.52 16.99-14.28 28.42-14.28 5.66 0 11.66 1.52 18.01 4.58 6.35 3.06 10.63 4.58 12.84 4.58 1.98 0 6.06-1.46 12.24-4.38 6.18-2.92 12.01-4.3 17.5-4.13 14.59.52 25.86 5.86 33.8 16.03-12.74 7.74-19 17.92-18.77 30.55.22 10.15 4.09 18.5 11.6 25.04 7.52 6.54 16.48 10.02 26.89 10.45-2.22 6.55-5.06 13.1-8.54 19.67zM119.22 4.11c0 7.74-2.8 15.08-8.41 22.02-5.61 6.94-12.57 11.27-20.9 13-1.12-7.85 1.76-15.34 7.21-22.14 5.45-6.81 12.74-11.08 21.05-12.88.75 0 1.05.52 1.05 0z" />
                                 </svg>
                             </div>
                             <h3 style={{ fontSize: '24px', margin: 0, color: 'var(--text)', fontWeight: 600 }}>MacOS</h3>
                             <p style={{ color: 'var(--text-soft)', margin: 0, fontSize: '14px' }}>Intel & Apple Silicon</p>
-                            <a 
+                            <a
                                 href={links.download_url_macos}
                                 className="btn btn-primary"
                                 style={{ width: '100%', textDecoration: 'none', marginTop: '12px' }}
@@ -1414,7 +1414,7 @@ function DownloadView({ lang }: { lang: 'vi' | 'en' }) {
                         </motion.div>
 
                         {/* Linux card */}
-                        <motion.div 
+                        <motion.div
                             id="download-linux"
                             className="download-card"
                             initial={{ opacity: 0, y: 20 }}
@@ -1437,15 +1437,15 @@ function DownloadView({ lang }: { lang: 'vi' | 'en' }) {
                             }}
                         >
                             <div className="os-icon-svg" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '64px' }}>
-                                <img 
-                                    src={`${getApiBase()}/img/icons8-linux-96.png`} 
-                                    alt="Linux" 
-                                    style={{ width: '56px', height: '56px', objectFit: 'contain' }} 
+                                <img
+                                    src={`${getApiBase()}/img/icons8-linux-96.png`}
+                                    alt="Linux"
+                                    style={{ width: '56px', height: '56px', objectFit: 'contain' }}
                                 />
                             </div>
                             <h3 style={{ fontSize: '24px', margin: 0, color: 'var(--text)', fontWeight: 600 }}>Linux</h3>
                             <p style={{ color: 'var(--text-soft)', margin: 0, fontSize: '14px' }}>AppImage / Tarball / DEB</p>
-                            <a 
+                            <a
                                 href={links.download_url_linux}
                                 className="btn btn-primary"
                                 style={{ width: '100%', textDecoration: 'none', marginTop: '12px' }}
@@ -1526,7 +1526,7 @@ export default function App() {
 
     const t = useMemo(() => {
         const baseTranslations = JSON.parse(JSON.stringify(translations[lang]))
-        
+
         // Restore functions lost during JSON deep clone
         if (translations[lang]?.pricing) {
             baseTranslations.pricing.choosePlanLabel = translations[lang].pricing.choosePlanLabel
@@ -1541,10 +1541,10 @@ export default function App() {
             if (free) {
                 baseTranslations.plans.free.profilesPerDay = free.daily_launch_limit
                 baseTranslations.plans.free.users = free.max_linked_accounts || 1
-                if (baseTranslations.plans.free.features) {
-                    baseTranslations.plans.free.features[0] = lang === 'vi'
-                        ? `${free.daily_launch_limit.toLocaleString('vi-VN')} Open profile/ngày`
-                        : `${free.daily_launch_limit.toLocaleString('en-US')} open profiles/day`
+                if (free.features && lang === 'vi') {
+                    baseTranslations.plans.free.features = free.features
+                } else if (baseTranslations.plans.free.features) {
+                    baseTranslations.plans.free.features[0] = `${free.daily_launch_limit.toLocaleString('en-US')} open profiles/day`
                 }
             }
             if (base) {
@@ -1552,13 +1552,11 @@ export default function App() {
                 baseTranslations.plans.base.yearly = base.price_usd_yearly
                 baseTranslations.plans.base.users = base.max_linked_accounts
                 baseTranslations.plans.base.profilesPerDay = base.daily_launch_limit
-                if (baseTranslations.plans.base.features) {
-                    baseTranslations.plans.base.features[0] = lang === 'vi'
-                        ? `${base.max_linked_accounts} thành viên nhóm`
-                        : `${base.max_linked_accounts} group members`
-                    baseTranslations.plans.base.features[1] = lang === 'vi'
-                        ? `${base.daily_launch_limit.toLocaleString('vi-VN')} Open profile/ngày`
-                        : `${base.daily_launch_limit.toLocaleString('en-US')} open profiles/day`
+                if (base.features && lang === 'vi') {
+                    baseTranslations.plans.base.features = base.features
+                } else if (baseTranslations.plans.base.features) {
+                    baseTranslations.plans.base.features[0] = `${base.max_linked_accounts} group members`
+                    baseTranslations.plans.base.features[1] = `${base.daily_launch_limit.toLocaleString('en-US')} open profiles/day`
                 }
             }
             if (team) {
@@ -1566,13 +1564,11 @@ export default function App() {
                 baseTranslations.plans.team.yearly = team.price_usd_yearly
                 baseTranslations.plans.team.users = team.max_linked_accounts
                 baseTranslations.plans.team.profilesPerDay = team.daily_launch_limit
-                if (baseTranslations.plans.team.features) {
-                    baseTranslations.plans.team.features[0] = lang === 'vi'
-                        ? `${team.max_linked_accounts} thành viên nhóm`
-                        : `${team.max_linked_accounts} group members`
-                    baseTranslations.plans.team.features[1] = lang === 'vi'
-                        ? `${team.daily_launch_limit.toLocaleString('vi-VN')} Open profile/ngày`
-                        : `${team.daily_launch_limit.toLocaleString('en-US')} open profiles/day`
+                if (team.features && lang === 'vi') {
+                    baseTranslations.plans.team.features = team.features
+                } else if (baseTranslations.plans.team.features) {
+                    baseTranslations.plans.team.features[0] = `${team.max_linked_accounts} group members`
+                    baseTranslations.plans.team.features[1] = `${team.daily_launch_limit.toLocaleString('en-US')} open profiles/day`
                 }
             }
             if (baseTranslations.comparison?.groups) {
@@ -1893,14 +1889,14 @@ export default function App() {
 
             {/* Floating Telegram Button */}
             <a
-                href="https://t.me/fastst_support"
+                href="https://t.me/trungducdev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="floating-telegram-btn"
                 aria-label="Chat via Telegram"
             >
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
                 </svg>
             </a>
 
@@ -1913,7 +1909,7 @@ export default function App() {
                 aria-label="Chat via Messenger"
             >
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.36 2 1.76 6.36 1.76 11.73c0 2.93 1.39 5.56 3.58 7.3.18.15.29.38.29.62v2.4c0 .59.62 1 .13.78l2.67-1.17c.18-.08.38-.1.58-.07 1.07.28 2.2.43 3.35.43 5.64 0 10.24-4.36 10.24-9.73S17.64 2 12 2zm1.18 12.57l-2.45-2.61-4.78 2.61 5.25-5.59 2.45 2.61 4.77-2.61-5.24 5.59z"/>
+                    <path d="M12 2C6.36 2 1.76 6.36 1.76 11.73c0 2.93 1.39 5.56 3.58 7.3.18.15.29.38.29.62v2.4c0 .59.62 1 .13.78l2.67-1.17c.18-.08.38-.1.58-.07 1.07.28 2.2.43 3.35.43 5.64 0 10.24-4.36 10.24-9.73S17.64 2 12 2zm1.18 12.57l-2.45-2.61-4.78 2.61 5.25-5.59 2.45 2.61 4.77-2.61-5.24 5.59z" />
                 </svg>
             </a>
         </div>

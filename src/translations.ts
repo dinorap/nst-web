@@ -369,7 +369,7 @@ export const translations: Translations = {
 
                 features: [
                     '10 Open profile/ngày',
-                    'Quản lý proxy cơ bản',
+                    'Quản lý proxy',
                     '1 thành viên',
                     'Hỗ trợ qua email',
                 ],
@@ -390,10 +390,9 @@ export const translations: Translations = {
                 features: [
                     '50 thành viên nhóm',
                     '3.000 Open profile/ngày',
-                    'Quản lý proxy nâng cao',
+                    'Quản lý proxy',
                     'Thao tác hàng loạt',
                     'Tự động hóa & API',
-                    'Tạo kịch bản dạng khối',
                     'Hỗ trợ ưu tiên 24/7',
                 ],
             },
@@ -412,10 +411,9 @@ export const translations: Translations = {
                 features: [
                     '150 thành viên nhóm',
                     '60.000 Open profile/ngày',
-                    'Quản lý proxy nâng cao',
+                    'Quản lý proxy',
                     'Thao tác hàng loạt',
                     'Tự động hóa & API',
-                    'Tạo kịch bản dạng khối',
                     'Tích hợp bên thứ ba',
                     'Hỗ trợ ưu tiên 24/7',
                 ],
@@ -823,7 +821,7 @@ export const translations: Translations = {
 
                 features: [
                     '10 profiles/day',
-                    'Basic proxy management',
+                    'Proxy management',
                     '1 team member',
                     'Email support',
                 ],
@@ -844,10 +842,9 @@ export const translations: Translations = {
                 features: [
                     '50 users',
                     '3,000 profiles/day',
-                    'Advanced proxy management',
+                    'Proxy management',
                     'Bulk operations',
                     'Automation & API',
-                    'Block-style scripting',
                     'Priority support 24/7',
                 ],
             },
@@ -865,10 +862,9 @@ export const translations: Translations = {
                 features: [
                     '150 users',
                     '60,000 profiles/day',
-                    'Advanced proxy management',
+                    'Proxy management',
                     'Bulk operations',
                     'Automation & API',
-                    'Block-style scripting',
                     'Third-party integrations',
                     'Priority support 24/7',
                 ],
